@@ -15,18 +15,9 @@ function Task({id,username,todoname,todos,setTodos}) {
         
     ))
 
-    const newarray = todos.filter((todo)=>{
-    // const newarray = todos.filter((todo)=>{
-    //     if(todo.id = id){
-    //         return false
-    //     }
-    //     else{
-    //         return true
-    //     }
-    // })
+    window.location.reload();
 
-
-    // setTodos(newarray);
+   
 
 
       
