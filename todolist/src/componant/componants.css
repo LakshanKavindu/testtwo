@@ -51,6 +51,8 @@
 
 p.username{
     margin-bottom:1em;
+    font-weight: 700;
+    text-transform: capitalize;
 }
 
 .detail p{
