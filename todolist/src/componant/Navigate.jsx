@@ -6,7 +6,7 @@ import React from 'react'
 const navigate = () => {
   return (
     <div>
-        <button><Link></Link></button>
+        <Link to="/add"><button>Add a To Do</button></Link>
     </div>
   )
 }

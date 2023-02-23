@@ -1,10 +1,29 @@
 import React from 'react'
 import "./pages.css"
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Addtodo = () => {
     const [name,setName] = useState('');
     const [todo,setTodo] = useState('');
+
+    async function handlesubmit(e){
+        e.preventDefault()
+        const tododata={
+            username:name,
+            todoname:todo,
+            is_deleted:0
+        }
+        await axios.post(" http://127.0.0.1:5000/api/todo/fetch",tododata)
+        .then(res=>{
+            console.log([res.status])
+        }).catch(error=>{
+            console.log(error.response.data.message)
+        })
+
+
+    }
 
 
     
@@ -16,12 +35,13 @@ const Addtodo = () => {
                 ADD To Do 
             </h1>
         </div>
-        <form className='myform'>
+        <form className='myform' onSubmit={handlesubmit}>
             <input type="text" placeholder='username' value={name} onChange={(e)=>setName(e.target.value)}/>
             <input type="text" placeholder='todoname' value={todo} onChange={(e)=>setTodo(e.target.value)}/>
             <input type="submit" className='mybtn'/>
 
         </form>
+        <Link to="/"><button>See My Todos</button></Link>
 
       
     </div>

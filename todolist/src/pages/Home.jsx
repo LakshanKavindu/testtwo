@@ -1,35 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import Printtodo from '../componant/Printtodo';
 import Navigate from '../componant/Navigate';
+import axios from 'axios';
+
+
 
 
 const Home = () => {
     const [todos,setTodos] = useState([
-        {
-        'name':"kavindu",
-        "todo":"do react",
-        "done":false,
-    },
-    {
-        'name':"nipun",
-        "todo":"do react and",
-        "done":false,
-    },
-    {
-        'name':"pramudi",
-        "todo":"do react and js",
-        "done":false,
-    },
-    {
-        'name':"pasindi",
-        "todo":"do react and js and html",
-        "done":false,
-    }
+        
+    ])
+    
+    
+    useEffect(()=>{
+        axios.get(" http://127.0.0.1:5000/api/todo/all").then((res)=>{
+           console.log(res.data.data)
+           setTodos(res.data.data)
+           
+        
+        })
+    },[])
 
-])
+    
   return (
     <div className='home_container'>
         <div className="title">
@@ -37,13 +32,9 @@ const Home = () => {
         </div>
         <div className="todo_container">
             <div className="todo">
-                {todos==null?<Navigate/>:<Printtodo todos={todos}/>}
+                {todos.length==0?<Navigate/>:<Printtodo todos={todos}/>}
                 
-                <div className="operations">
-                    <DeleteIcon/>
-                    <CheckCircleOutlineIcon/>
-                </div>
-               
+              
 
 
             </div>
