@@ -8,9 +8,9 @@ const Printtodo = ({todos,setTodos}) => {
   
   return (
     <div className='printtodo_container'>
-        <div>
+        <div className='todos_container'>
       {todos.map((task)=>(
-        <Task key={task.id} username={task.username} todoname={task.todoname} id={task.id} todos={todos} setTodos={setTodos}/>
+        <Task key={task.id} username={task.username} todoname={task.todoname} id={task.id} todos={todos} setTodos={setTodos} is_done={task.is_done}/>
 
         
         

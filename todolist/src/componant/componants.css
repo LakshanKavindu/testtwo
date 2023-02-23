@@ -10,11 +10,10 @@
 }
 .details{
     width: 300px;
-    display: flex;
-    justify-content: center;
+    
     border: 3px solid lightblue;
     text-align: center;
-    margin-left: 600px;
+    /* margin-left: 600px; */
     border-radius: 12px;
     margin-top: 5px;
     
@@ -40,5 +39,52 @@
 }
 .detail{
     color: white;
+}
+
+.todos_container{
+    display: grid;
+    place-items: center;
+}
+
+
+/* task.jsx styling */
+
+p.username{
+    margin-bottom:1em;
+}
+
+.detail p{
+    margin:0;
+}
+.icons{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icons .icon2{
+    border-radius: 50%;
+
+
+
+}
+
+
+
+
+.empty_container{
+    border:5px dotted green;
+    width:50%;
+    height:300px;
+    border-radius: 12px;
+    margin:0 auto;
+    display: grid;
+    place-items: center;
+    
+}
+
+.empty_container h1{
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: capitalize;
 }
 
