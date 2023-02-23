@@ -13,7 +13,7 @@ const Addtodo = () => {
     <div className='container'>
         <div className="title">
             <h1>
-                ADD To Do
+                ADD To Do 
             </h1>
         </div>
         <form className='myform'>

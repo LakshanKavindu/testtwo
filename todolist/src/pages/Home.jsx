@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import Printtodo from '../componant/printtodo';
+import Navigate from '../componant/Navigate';
 
 
 const Home = () => {
@@ -35,10 +37,8 @@ const Home = () => {
         </div>
         <div className="todo_container">
             <div className="todo">
-                <div className="details">
-                    <p className='username'>Aruna</p>
-                    <p className='todoname'>learn php</p>
-                </div>
+                {todos==null?<Printtodo todos={todos}/>:<Navigate/>}
+                
                 <div className="operations">
                     <DeleteIcon/>
                     <CheckCircleOutlineIcon/>
