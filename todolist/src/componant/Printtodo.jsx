@@ -1,13 +1,13 @@
 import React from 'react'
 
-const printtodo = (props) => {
+const Printtodo = (props) => {
   return (
     <div>{props.todos.map((task)=>{
-        <p>{todos.name}</p>
+        <p>{task.name}</p>
 
 
     })}</div>
   )
 }
 
-export default printtodo
+export default Printtodo

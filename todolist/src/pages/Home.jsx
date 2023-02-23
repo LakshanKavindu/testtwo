@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import Printtodo from '../componant/printtodo';
+import Printtodo from '../componant/Printtodo';
 import Navigate from '../componant/Navigate';
 
 
