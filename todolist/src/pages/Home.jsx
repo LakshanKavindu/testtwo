@@ -34,6 +34,7 @@ const Home = () => {
         <div className="todo_container">
             <div className="todo">
                 {todos.length===0?<Navigate/>:<Printtodo todos={todos} setTodos={setTodos}/>}
+                {/* <Printtodo todos={todos} setTodos={setTodos}/> */}
                 
               
 
