@@ -37,7 +37,7 @@ const Home = () => {
         </div>
         <div className="todo_container">
             <div className="todo">
-                {todos==null?<Printtodo todos={todos}/>:<Navigate/>}
+                {todos==null?<Navigate/>:<Printtodo todos={todos}/>}
                 
                 <div className="operations">
                     <DeleteIcon/>
