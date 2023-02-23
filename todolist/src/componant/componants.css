@@ -1,0 +1,44 @@
+.addtodo{
+    width:100px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 12px;
+    height: 40px;
+    color: white;
+    background-color: lightskyblue;
+    border: none;
+    margin-top: 20px;
+}
+.details{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    border: 3px solid lightblue;
+    text-align: center;
+    margin-left: 600px;
+    border-radius: 12px;
+    margin-top: 5px;
+    
+    
+}
+.icon1,.icon2{
+    color: lightblue;
+    
+}
+.icon2{
+    margin-right: 2px;
+
+}
+.navaddbtn{
+    width:100px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 12px;
+    height: 40px;
+    color: white;
+    background-color: lightskyblue;
+    border: none;
+    margin-top: 20px;
+}
+.detail{
+    color: white;
+}
+

@@ -2,6 +2,7 @@ import React from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import axios from 'axios';
+import "./componants.css"
 
 
 
@@ -25,14 +26,15 @@ function Task({id,username,todoname,todos,setTodos}) {
 
   }
   return (
-    <div >
-          <p>{username} :
+    
+    <div className='details'>
+          <div className='detail' > {username} :  {todoname}  
                     
-                {todoname}  
+               
 
-                </p>
-                <div><DeleteIcon  onClick={handledelete}/></div>
-                <CheckCircleOutlineIcon/>
+                </div>
+                <div className='icon1'><DeleteIcon  onClick={handledelete}/></div>
+               <div className='icon2'> <CheckCircleOutlineIcon/></div>
 
                     
           

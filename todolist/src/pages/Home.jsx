@@ -4,6 +4,8 @@ import { useState } from 'react'
 import Printtodo from '../componant/Printtodo';
 import Navigate from '../componant/Navigate';
 import axios from 'axios';
+import "./pages.css"
+
 
 
 

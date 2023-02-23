@@ -49,9 +49,11 @@ const Addtodo = () => {
 
   return (
     <div className='container'>
+        
+       
         <div className="title">
             <h1>
-                ADD To Do 
+                ADD TO DO
             </h1>
         </div>
         <form className='myform' onSubmit={handlesubmit}>
@@ -60,7 +62,7 @@ const Addtodo = () => {
             <input type="submit" className='mybtn'/>
 
         </form>
-        <Link to="/"><button>See My Todos</button></Link>
+        <Link to="/"><button className='seetodo'>See My Todos</button></Link>
 
       
     </div>
