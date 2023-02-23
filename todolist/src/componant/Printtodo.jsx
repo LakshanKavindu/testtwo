@@ -1,31 +1,16 @@
 import React from 'react'
-import DeleteIcon from '@mui/icons-material/Delete';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+
 import { Link } from 'react-router-dom';
+import Task from './Task';
 
 const Printtodo = ({todos}) => {
-    async function handledelete(id){
-        console.log(id)
-        
-
-
-
-    }
+  
   return (
     <div>
       {todos.map((task)=>(
-        <div key={task.id}>
-          <p>{task.username} :
-                    
-                {task.todoname}  
+        <Task key={task.id} username={task.username} todoname={task.todoname} id={task.id}/>
 
-                </p>
-                <div onClick={handledelete(task.id)}><DeleteIcon/></div>
-                <CheckCircleOutlineIcon/>
-
-                    
-          
-        </div>
+        
         
       ))}
 

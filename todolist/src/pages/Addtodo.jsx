@@ -3,10 +3,21 @@ import "./pages.css"
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useEffect } from 'react';
 
 const Addtodo = () => {
     const [name,setName] = useState('');
     const [todo,setTodo] = useState('');
+    const [error,setError] = useState('');
+
+    function call_error(error){
+      
+            alert(error);
+    
+      
+
+    }
+   
 
     async function handlesubmit(e){
         e.preventDefault()
@@ -19,7 +30,10 @@ const Addtodo = () => {
         .then(res=>{
             console.log([res.status])
         }).catch(error=>{
-            console.log(error.response.data.message)
+            console.log(error.response.data.message);
+            setError(error.response.data.message);
+            call_error(error);
+
         })
 
 

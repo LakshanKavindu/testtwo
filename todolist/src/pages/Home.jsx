@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import DeleteIcon from '@mui/icons-material/Delete';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+
 import Printtodo from '../componant/Printtodo';
 import Navigate from '../componant/Navigate';
 import axios from 'axios';
@@ -17,12 +16,14 @@ const Home = () => {
     
     useEffect(()=>{
         axios.get(" http://127.0.0.1:5000/api/todo/all").then((res)=>{
-           console.log(res.data.data)
+        //    console.log(res.data.data)
            setTodos(res.data.data)
            
         
         })
     },[])
+
+   
 
     
   return (
@@ -32,7 +33,7 @@ const Home = () => {
         </div>
         <div className="todo_container">
             <div className="todo">
-                {todos.length==0?<Navigate/>:<Printtodo todos={todos}/>}
+                {todos.length===0?<Navigate/>:<Printtodo todos={todos}/>}
                 
               
 
