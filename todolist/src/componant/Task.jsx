@@ -5,11 +5,28 @@ import axios from 'axios';
 
 
 
-function Task({id,username,todoname}) {
-  function handledelete(){
-  axios.delete(`http://127.0.0.1:5000/api/todo/${id}`)
-  window.location.reload()
+function Task({id,username,todoname,todos,setTodos}) {
+  async function handledelete(){
+    await axios.delete(`http://127.0.0.1:5000/api/todo/${id}`)
+    .then(res=>(
+        console.log(res)
+    ))
 
+    const newarray = todos.filter((todo)=>{
+        if(todo.id = id){
+            return false
+        }
+        else{
+            return true
+        }
+    })
+
+
+    setTodos(newarray);
+
+
+      
+  
 
   }
   return (

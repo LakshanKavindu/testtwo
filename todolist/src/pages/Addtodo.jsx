@@ -9,6 +9,7 @@ const Addtodo = () => {
     const [name,setName] = useState('');
     const [todo,setTodo] = useState('');
     const [error,setError] = useState('');
+    const [message,setMessage] = useState('');
 
     function call_error(error){
       
@@ -28,13 +29,17 @@ const Addtodo = () => {
         }
         await axios.post(" http://127.0.0.1:5000/api/todo/fetch",tododata)
         .then(res=>{
-            console.log([res.status])
+            console.log([res.data.status]);
+            setMessage(res.data.status);
         }).catch(error=>{
             console.log(error.response.data.message);
             setError(error.response.data.message);
             call_error(error);
 
         })
+
+        setName('');
+        setTodo('');
 
 
     }

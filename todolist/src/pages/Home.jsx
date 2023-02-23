@@ -33,7 +33,7 @@ const Home = () => {
         </div>
         <div className="todo_container">
             <div className="todo">
-                {todos.length===0?<Navigate/>:<Printtodo todos={todos}/>}
+                {todos.length===0?<Navigate/>:<Printtodo todos={todos} setTodos={setTodos}/>}
                 
               
 

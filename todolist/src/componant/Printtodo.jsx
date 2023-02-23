@@ -3,12 +3,12 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Task from './Task';
 
-const Printtodo = ({todos}) => {
+const Printtodo = ({todos,setTodos}) => {
   
   return (
     <div>
       {todos.map((task)=>(
-        <Task key={task.id} username={task.username} todoname={task.todoname} id={task.id}/>
+        <Task key={task.id} username={task.username} todoname={task.todoname} id={task.id} todos={todos} setTodos={setTodos}/>
 
         
         
