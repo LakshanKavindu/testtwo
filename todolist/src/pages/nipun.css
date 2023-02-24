@@ -7,12 +7,36 @@ button{
     width: 80px;
     margin: 20px;
 }
+
+.cardset{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
 .card{
-    border: 2px solid black;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 300px;
     border-radius:10px;
-    text-align: left;
+    text-align:left;
     padding-left: 1%;
+    margin-bottom: 1em;
+    color:white;
+    background-color: rgb(90, 90, 90);
+}
+
+.card p{
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.card p div{
+    font-weight: 200;
+    display: flex;
+    justify-content: flex-start;
 }
 .action{
     display: flex;
@@ -39,4 +63,18 @@ form input{
 }
 
 
+.set2{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.set2 input{
+    width: 50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}

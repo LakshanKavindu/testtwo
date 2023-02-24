@@ -1,9 +1,29 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import ModeEditIcon from '@mui/icons-material/ModeEdit';
-import DeleteIcon from '@mui/icons-material/Delete';
 
-const inventory = () => {
+import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useState } from 'react'
+import Card from '../componant/Card'
+
+import axios from 'axios';
+// import { u,useState } from 'react';
+
+const Inventory = () => {
+    const [medicine,setMedicine] = useState([]);
+
+    useEffect(()=>{
+        axios.get(" http://127.0.0.1:5000/api/medicine/all").then((res)=>{
+        //    console.log(res.data.data)
+         setMedicine(res.data.data);
+         console.log(res.data.data);
+           
+        
+        })
+    },[])
+
+
+
+    
+
   return ( 
     <div className='container'>
     <div className='nav'>
@@ -13,20 +33,17 @@ const inventory = () => {
     <Link to="/addnew"><button className='addbbtn'>Add New Drug</button></Link>
       
     </div>
+
+
+
     <div className='cardset'>
-      <div className='card'>
-        <div className='id'>ID :<p></p> </div>
-        <div className='drugname'>Drug name :<p></p> </div>
-        <div className='manufacture'>Manufacture : <p></p></div>
-        <div className='supplier'>Supplier : <p></p></div>
-        <div className='ndc'>NDC : </div>
-        <div className='Expiration_date'>Expiration Date :<p></p> </div>
-        <div className='quantity'>Quantity :<p></p></div>
-        <div className='unit_price'>Unit Price : <p></p></div>
-        <div className='action'>Action :<div><ModeEditIcon></ModeEditIcon><DeleteIcon></DeleteIcon></div> </div>
 
+        {medicine.map((item)=>(
+            <Card key={item.id} item={item}/>
+            
 
-      </div>
+        ))}
+      
 
     </div>
    
@@ -37,4 +54,4 @@ const inventory = () => {
   )
 }
 
-export default inventory
+export default Inventory

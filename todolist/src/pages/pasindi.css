@@ -85,3 +85,8 @@
     
 
  }
+
+ .clearfix{
+    display: flex;
+    justify-content: center;
+ }

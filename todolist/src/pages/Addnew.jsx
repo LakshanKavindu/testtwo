@@ -37,6 +37,16 @@ const Addnew = () => {
         // call_error(error);
 
     })
+
+
+    setDrug_name('');
+    setManufacture('');
+    setSupplier('');
+    setNdc('');
+    setQuantity(0);
+    setUnit_price(0);
+    setExpiration_date('');
+    
     
 
 
@@ -74,12 +84,12 @@ const Addnew = () => {
             </div>
             <div className='set2'>
             <input type="text" placeholder='NDC(National Drug code)' value={ndc} onChange={(e)=>setNdc(e.target.value)}/>
-            <input type="number" placeholder='Quntity on Hand' value={quantity} onChange={(e)=>setQuantity(e.target.value)}/>
-            <input type="number" placeholder='Unit Price' value={unit_price} onChange={(e)=>setUnit_price(e.target.value)}/></div>
+            <label>Quantity :</label><input type="number" placeholder='Quntity on Hand' value={quantity} onChange={(e)=>setQuantity(e.target.value)}/>
+            <label>Unit Price :</label><input type="number" placeholder='Unit Price' value={unit_price} onChange={(e)=>setUnit_price(e.target.value)}/></div>
             <div  className='set3'>
             <input type="text" placeholder='Expiration Date' value={expiration_date} onChange={(e)=>setExpiration_date(e.target.value)} /></div>
             <button className='addbtn_in_addpage' type='submit'>Add Drug</button>
-           <h1>delete</h1>
+          
             
             
             </form>
