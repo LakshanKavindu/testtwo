@@ -1,6 +1,6 @@
 
 import './App.css';
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import {BrowserRouter,Routes,Route,Link} from 'react-router-dom'
 
 // pages importing
 import Home from './pages/Home';
@@ -21,7 +21,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/add" element={<Addtodo/>}/>
+          {/* <Route path="/add" element={<Addtodo/>}/> */}
           <Route path="/inventory" element={<Inventory/>}/>
           <Route path='/addnew' element={<Addnew/>}/>
           <Route path='/pharmacydash' element={<Pharmacydash/>}/>
