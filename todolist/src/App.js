@@ -10,8 +10,9 @@ import Addnew from './pages/Addnew';
 import Adminsignin from './pages/Adminsignin';
 import Admindashboard from './pages/Admindashboard';
 import Pharmacydash from './pages/Pharmacydash';
-import Pharmacydashprofile from './pages/Pharmacydashprofile'
-import Userfront from './pages/Userfront'
+import Pharmacydashprofile from './pages/Pharmacydashprofile';
+import Userfront from './pages/Userfront';
+import Signup from './pages/Signup';
 
 
 
@@ -30,6 +31,7 @@ function App() {
           <Route path='/adminsignin' element={<Adminsignin/>}/>
           <Route path='/admindashboard' element={<Admindashboard/>}/>
           <Route path='/Pharmacydashprofile' element={<Pharmacydashprofile/>}/>
+          <Route path='/Signup' element={<Signup/>}/>
         </Routes>
 
       </BrowserRouter>
