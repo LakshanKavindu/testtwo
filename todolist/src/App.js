@@ -26,7 +26,7 @@ function App() {
           <Route path='/addnew' element={<Addnew/>}/>
           <Route path='/pharmacydash' element={<Pharmacydash/>}/>
           <Route path='/pharmacydashprofile' element={<Addnew/>}/>
-          <Route path='/userfront' element={<Userfront/>}/>
+          <Route path='/UserFront' element={<Userfront/>}/>
           <Route path='/adminsignin' element={<Adminsignin/>}/>
           <Route path='/admindashboard' element={<Admindashboard/>}/>
           <Route path='/Pharmacydashprofile' element={<Pharmacydashprofile/>}/>
