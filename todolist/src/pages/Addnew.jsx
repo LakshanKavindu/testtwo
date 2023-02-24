@@ -5,15 +5,15 @@ import axios from 'axios'
 import { useState } from 'react'
 // import ModeEditIcon from '@mui/icons-material/ModeEdit';
 
-const addnew = () => {
-    const [drug_name,setDrug_name] = React.useState('');
-    const [manufacture,setManufacture] = React.useState('');
-    const [supplier,setSupplier] = React.useState('');
-    const [ndc,setNdc] = React.useState('');
-    const [quantity,setQuantity] = React.useState('');
-    const [unit_price,setUnit_price] = React.useState('');
-    const [expiration_date,setExpiration_date] = React.useState('');
-    const [error,setError] = React.useState('');
+const Addnew = () => {
+    const [drug_name,setDrug_name] = useState('');
+    const [manufacture,setManufacture] = useState('');
+    const [supplier,setSupplier] = useState('');
+    const [ndc,setNdc] = useState('');
+    const [quantity,setQuantity] = useState(0);
+    const [unit_price,setUnit_price] = useState(0);
+    const [expiration_date,setExpiration_date] = useState('');
+    const [error,setError] = useState('');
   
   async function handlesubmit(e){
     e.preventDefault()
@@ -21,10 +21,10 @@ const addnew = () => {
         drug_name:drug_name,
         manufacture:manufacture,
         supplier:supplier,
-        ndc:ndc,
-        quantity:quantity,
-        unit_price:unit_price,
-        expiration_date:expiration_date,
+        NDC:ndc,
+        Quantity:quantity,
+        Unit_price:unit_price,
+        Expiration_date:expiration_date,
         is_deleted:0
     }
     await axios.post("http://127.0.0.1:5000/api/medicine/fetch",medicinedata)
@@ -37,6 +37,8 @@ const addnew = () => {
         // call_error(error);
 
     })
+    
+
 
   
 
@@ -62,20 +64,21 @@ const addnew = () => {
       
       
         <div className='add_data'>
-          <form>
+          <form onSubmit={handlesubmit}>
           
           <div className='set1'>
           
             <input type="text" placeholder='Select Drug Name' value={drug_name} onChange={(e)=>setDrug_name(e.target.value)}/>
             <input type="text" placeholder='Manufacture' value={manufacture} onChange={(e)=>setManufacture(e.target.value)}/>
-            <input type="text" placeholder='Supplier' value={supplier} /></div>
+            <input type="text" placeholder='Supplier' value={supplier} onChange={(e)=>setSupplier(e.target.value)} />
+            </div>
             <div className='set2'>
-            <input type="text" placeholder='NDC(National Drug code)'/>
-            <input type="number" placeholder='Quntity on Hand'/>
-            <input type="number" placeholder='Unit Price'/></div>
+            <input type="text" placeholder='NDC(National Drug code)' value={ndc} onChange={(e)=>setNdc(e.target.value)}/>
+            <input type="number" placeholder='Quntity on Hand' value={quantity} onChange={(e)=>setQuantity(e.target.value)}/>
+            <input type="number" placeholder='Unit Price' value={unit_price} onChange={(e)=>setUnit_price(e.target.value)}/></div>
             <div  className='set3'>
-            <input type="text" placeholder='Expiration Date'></input></div>
-            <button className='addbtn_in_addpage' onClick={handlesubmit}>Add Drug</button>
+            <input type="text" placeholder='Expiration Date' value={expiration_date} onChange={(e)=>setExpiration_date(e.target.value)} /></div>
+            <button className='addbtn_in_addpage' type='submit'>Add Drug</button>
            
             
             
@@ -93,4 +96,4 @@ const addnew = () => {
   )
 }
 
-export default addnew
+export default Addnew
