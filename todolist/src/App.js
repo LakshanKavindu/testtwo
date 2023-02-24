@@ -4,7 +4,7 @@ import {BrowserRouter,Routes,Route,Link} from 'react-router-dom'
 
 // pages importing
 import Home from './pages/Home';
-import Addtodo from './pages/Addtodo';
+// import Addtodo from './pages/Addtodo';
 import Inventory from './pages/Inventory';
 import Addnew from './pages/Addnew';
 import Adminsignin from './pages/Adminsignin';

@@ -110,7 +110,7 @@ class Medicine(Resource):
             
 
             cursor= mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            cursor.execute("""insert into medicine (drug_name,manufacture,supplier,NDC,Expiration_date,Quantity,Unit_price,is_deleted) values(%s,%s,%s,%s,%s,%s,%s,%s)""",[drugname,manufacture,supplier,ndc,date,quantity,unit_price,is_deleted])
+            cursor.execute("""insert into medicine (drug_name,manufacture,supplier,ndc,Expiration_date,Quantity,Unit_price,is_deleted) values(%s,%s,%s,%s,%s,%s,%s,%s)""",[drugname,manufacture,supplier,ndc,date,quantity,unit_price,is_deleted])
             mysql.connection.commit()
             cursor.close()
 
@@ -169,6 +169,23 @@ class Pharmacy(Resource):
             cursor.close()
 
             return {"data":data},200
+        
+    
+
+    def checking_password(self):
+        args=pharmacy_put_args.parse_args()
+        password = args['password']
+        confirm_password = args['confirm_password']
+
+        if password == confirm_password:
+            return True
+        else:
+            return False
+        
+       
+        
+    
+
     
 
     @cross_origin()
@@ -180,7 +197,7 @@ class Pharmacy(Resource):
             self.signin()
             
 
-    @cross_origin()  
+        
     def signup(self):
         args=pharmacy_put_args.parse_args()
         pharmacyname = args['pharmacy_name']
@@ -192,13 +209,12 @@ class Pharmacy(Resource):
         confirm_password = args['confirm_password']
 
         cursor= mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute("""insert into pharmacy (pharmacy_name,email,address,phone,liscene,password,confirm_password) values(%s,%s,%s,%s,%s,%s,%s)""",[pharmacyname,email,address,phone,liscene,password,confirm_password])
+        cursor.execute("""insert into pharmacy (pharmacy_name,email,address,phone_number,pharmacy_liscene,password,confirm_password) values(%s,%s,%s,%s,%s,%s,%s)""",[pharmacyname,email,address,phone,liscene,password,confirm_password])
         mysql.connection.commit()
         cursor.close()
 
 
         return {"status":"pharmacy added succesfully"},200  
-    @cross_origin()
     def signin(self):
         args=pharmacy_put_args.parse_args()
         email = args['email']
@@ -213,7 +229,7 @@ class Pharmacy(Resource):
             return {"status":"login success"},200
         else:
             return {"status":"login failed"},400
-
+    
 
 
 
