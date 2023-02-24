@@ -4,7 +4,7 @@ import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const inventory = () => {
-  return (
+  return ( 
     <div className='container'>
     <div className='nav'>
     <Link to="/inventory"><button>Inventory</button></Link>
