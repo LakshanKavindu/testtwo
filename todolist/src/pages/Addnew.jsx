@@ -79,7 +79,7 @@ const Addnew = () => {
             <div  className='set3'>
             <input type="text" placeholder='Expiration Date' value={expiration_date} onChange={(e)=>setExpiration_date(e.target.value)} /></div>
             <button className='addbtn_in_addpage' type='submit'>Add Drug</button>
-           
+           <h1>delete</h1>
             
             
             </form>
