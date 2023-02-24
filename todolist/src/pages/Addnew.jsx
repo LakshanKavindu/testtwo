@@ -21,10 +21,10 @@ const Addnew = () => {
         drug_name:drug_name,
         manufacture:manufacture,
         supplier:supplier,
-        NDC:ndc,
-        Quantity:quantity,
-        Unit_price:unit_price,
-        Expiration_date:expiration_date,
+        ndc:ndc,
+        quantity:quantity,
+        unit_price:unit_price,
+        date:expiration_date,
         is_deleted:0
     }
     await axios.post("http://127.0.0.1:5000/api/medicine/fetch",medicinedata)

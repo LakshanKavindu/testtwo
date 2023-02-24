@@ -180,7 +180,7 @@ class Pharmacy(Resource):
             self.signin()
             
 
-        
+    @cross_origin()  
     def signup(self):
         args=pharmacy_put_args.parse_args()
         pharmacyname = args['pharmacy_name']
@@ -198,7 +198,7 @@ class Pharmacy(Resource):
 
 
         return {"status":"pharmacy added succesfully"},200  
-    
+    @cross_origin()
     def signin(self):
         args=pharmacy_put_args.parse_args()
         email = args['email']
